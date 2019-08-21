@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+
 import 'package:learning_app/utils/constants.dart';
+import '../UI/agenda_list.dart';
 
 //import '../utils/constants.dart';
 
 class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold( 
+    return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Agenda', 
-          style: TextStyle(fontSize: 25),
-          ),
-        //iconTheme: IconThemeData(color: highlightGreen), // to make hamburger icon green
+          'Agenda',
+          style: TextStyle(fontSize: 25, color: mainWhite),
+        ),
+        iconTheme:
+            IconThemeData(color: mainWhite), // to change hamburger icon color
       ),
       drawer: new Drawer(
         child: ListView(
@@ -20,11 +23,12 @@ class LandingPage extends StatelessWidget {
             ListTile(
               onTap: () => {print("Tile")},
             )
-        ],),
+          ],
+        ),
       ),
-      body: Container(
+      body: Material(
         color: accentGrey,
-        //child: AgendaList()
+        child: AgendaList(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {print("Action button pressed")},
